@@ -2,7 +2,6 @@
 server:
   port: 9100
 
-
 spring:
   application:
     name: forgetFreeSpace
@@ -43,6 +42,10 @@ spring:
         profile-enable: true
         session-stat-max-count: 1000
         url-pattern: /*
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/
 
 #mybatis的配置
 mybatis:

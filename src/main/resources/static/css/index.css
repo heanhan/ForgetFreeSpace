@@ -77,3 +77,8 @@ body {
     color: rgb(198, 198, 198);
     font-size: 12px;
 }
+
+/*图片高斯模糊处理*/
+.blur {
+    filter: blur(20px);
+}

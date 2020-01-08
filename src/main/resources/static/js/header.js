@@ -44,7 +44,7 @@ document.writeln("	</head>");
 document.writeln("");
 document.writeln("	<body>");
 document.writeln("		<nav id=\'top\'>");
-document.writeln("			<span id=\'logo\' style=\'float: left;margin-left: 10px;\'><img src=\'img/blog-logo.png\'/></span>");
+document.writeln("			<span id=\'logo\' style=\'float: left;margin-left: 10px;\'><img src=\'img/zhaojhlogo.png\'/></span>");
 document.writeln("			<a href=\'index.html\'>首页</a>");
 document.writeln("			<a href=\'blog.html\'>博客</a>");
 document.writeln("			<a href=\'about.html\'>关于</a>");
