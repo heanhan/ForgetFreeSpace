@@ -1,10 +1,11 @@
 #服务信息
 server:
   port: 9100
-
 spring:
   application:
     name: forgetFreeSpace
+    swagger:
+      enable: true
   #配置mysql的连接信息
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -58,3 +59,16 @@ logging:
     com:
       zjh:
         space: debug
+swagger:
+  base-package: com.zjh.space.controller
+  base-path: /**
+  contact:
+    email: dyc87112@qq.com
+    name: didi
+    url: http://blog.didispace.com
+  description: Starter for swagger 2.x
+  license: Apache License, Version 2.0
+  licenseUrl: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfServiceUrl: https://github.com/dyc87112/spring-boot-starter-swagger
+  title: spring-boot-starter-swagger
+  version: 1.4.0.RELEASE
