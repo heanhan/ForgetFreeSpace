@@ -1,6 +1,8 @@
 package com.zjh.space.dao;
 
 import com.zjh.space.entity.pojo.Article;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -10,9 +12,6 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface ArticleDao {
+public interface ArticleDao extends JpaRepository<Article,Long>, JpaSpecificationExecutor<Article> {
 
-    //添加博客文章
-
-    Article addArticle(Article article);
 }

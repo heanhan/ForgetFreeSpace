@@ -16,11 +16,11 @@ import org.springframework.stereotype.Service;
 public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
-    private ArticleDao articleMapper;
+    private ArticleDao articleDao;
 
     @Override
     public Boolean addArticle(Article article) {
-        Article article1 =articleMapper.addArticle(article);
+        Article article1 =articleDao.save(article);
         if(null!=article1){
             return true;
         }
