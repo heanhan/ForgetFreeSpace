@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,20 +18,44 @@ import java.util.Date;
  */
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
+@Table(name = "space_blog_logs")
 public class BlogLogs  implements Serializable {
 
-    private Long id;//主键
+    /**
+     * 主键
+     */
+    @Id
+    private Long id;
 
-    private String ip;//操作的ip
+    /**
+     * 操作的ip
+     */
+    @Column(name = "ip")
+    private String ip;
 
-    private Date createTime;//创建时间
+    /**
+     *创建时间
+     */
+    @Column(name = "create_time")
+    private Date createTime;
 
-    private String operator_content;//操作的内容
+    /**
+     *操作的内容
+     */
+    @Column(name = "operator_content")
+    private String operatorContent;
 
-    private String operatorUrl;//操作访问的地址
+    /**
+     *操作访问的地址
+     */
+    @Column(name = "operator_url")
+    private String operatorUrl;
 
-    private String operatorScan;//操作的浏览器
+    /**
+     *操作的浏览器
+     */
+    @Column(name = "operator_scan")
+    private String operatorScan;
 
 }

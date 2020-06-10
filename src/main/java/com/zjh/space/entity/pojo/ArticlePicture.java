@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,17 +18,38 @@ import java.util.Date;
  */
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
+@Table(name = "space_article_picture")
 public class ArticlePicture implements Serializable {
 
-    private Long id;//主键
+    /**
+     * 主键
+     */
+    @Id
+    private Long id;
 
-    private Long articleId;//文章id
 
-    private String pictureUrl;//图片的地址
+    /**
+     *文章id
+     */
+    @Column(name = "article_id")
+    private Long articleId;
 
-    private Date createTime;//创建时间
+    /**
+     *图片的地址
+     */
+    @Column(name = "picture_url")
+    private String pictureUrl;
 
-    private Date modifiedTime;//修改时间
+    /**
+     *创建时间
+     */
+    @Column(name = "create_time")
+    private Date createTime;
+
+    /**
+     *修改时间
+     */
+    @Column(name = "modified_time")
+    private Date modifiedTime;
 }

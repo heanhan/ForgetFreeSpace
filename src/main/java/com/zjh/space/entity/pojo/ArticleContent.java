@@ -5,7 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,8 +18,8 @@ import java.util.Date;
  */
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
+@Table(name = "space_article_content")
 public class ArticleContent implements Serializable {
 
     /**
@@ -41,18 +43,18 @@ public class ArticleContent implements Serializable {
     /**
      *文章对应留言的id
      */
-    @Column(name = "commentId")
+    @Column(name = "comment_id")
     private Long commentId;
 
     /**
      *创建时间
      */
-    @Column(name = "createTime")
+    @Column(name = "create_time")
     private Date createTime;
 
     /**
      *是否有效 默认为 1 有效，置0 无效
      */
-    @Column(name = "isEffective")
+    @Column(name = "is_effective")
     private int isEffective;
 }

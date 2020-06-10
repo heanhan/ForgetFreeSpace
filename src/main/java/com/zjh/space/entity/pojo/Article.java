@@ -41,7 +41,7 @@ public class Article implements Serializable {
     /**
      *文章是否置顶，0为否，1是
      */
-    @Column(name = "isTop")
+    @Column(name = "is_top")
     private String isTop;
 
     /**
@@ -53,13 +53,13 @@ public class Article implements Serializable {
     /**
      *创建时间
      */
-    @Column(name = "createTime")
+    @Column(name = "create_time")
     private Date createTime;
 
     /**
      *修改时间
      */
-    @Column(name = "modifiedTime")
+    @Column(name = "modified_time")
     private Date modifiedTime;
 
 }

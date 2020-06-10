@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,19 +18,43 @@ import java.util.Date;
  */
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
+@Table(name = "space_category")
 public class Category implements Serializable {
 
-    private Long id;//主键
+    /**
+     * 主键
+     */
+    @Id
+    private Long id;
 
-    private String name;//分类名称
+    /**
+     * 分类名称
+     */
+    @Column(name = "name")
+    private String name;
 
-    private int number;//该分类下的文章数量
+    /**
+     * 该分类下的文章数量
+     */
+    @Column(name = "number")
+    private int number;
 
-    private Date createTimel;//创建时间
+    /**
+     * 创建时间
+     */
+    @Column(name = "create_time")
+    private Date createTime;
 
-    private Date modifiedTime;//修改时间
+    /**
+     * 修改时间
+     */
+    @Column(name = "modified_time")
+    private Date modifiedTime;
 
-    private int isEffective;//是否有效 默认为1 有效 0 为无效
+    /**
+     * 是否有效 默认为1 有效 0 为无效
+     */
+    @Column(name = "is_effective")
+    private int isEffective;
 }

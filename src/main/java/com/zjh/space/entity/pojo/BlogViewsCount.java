@@ -1,9 +1,11 @@
 package com.zjh.space.entity.pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -13,13 +15,25 @@ import java.util.Date;
  * @function :浏览表 */
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
+@Table(name = "space_blog_view_count")
 public class BlogViewsCount implements Serializable {
 
-    private Long id;//主键
+    /**
+     * 主键
+     */
+    @Id
+    private Long id;
 
-    private String ip;//ip
+    /**
+     * ip
+     */
+    @Column(name = "ip")
+    private String ip;
 
-    private Date createTime;//创建时间
+    /**
+     * 创建时间
+     */
+    @Column(name = "create_time")
+    private Date createTime;
 }

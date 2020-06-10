@@ -28,30 +28,30 @@ public class ArticleCategory  implements Serializable {
     /**
      * 关联的分类id
      */
-    @Column(name = "categoryId")
+    @Column(name = "category_id")
     private Long categoryId;
 
     /**
      *关联的文章id;
      */
-    @Column(name = "articleId")
+    @Column(name = "article_id")
     private Long articleId;
 
     /**
      *创建时间
      */
-    @Column(name = "createTime")
+    @Column(name = "create_time")
     private Date createTime;
 
     /**
      * 修改时间
      */
-    @Column(name = "modifiedTime")
+    @Column(name = "modified_time")
     private Date modifiedTime;
 
     /**
      * 是否有效  默认1 有效 0 为无效
      */
-    @Column(name = "isEffective")
+    @Column(name = "is_effective")
     private int isEffective;
 }
