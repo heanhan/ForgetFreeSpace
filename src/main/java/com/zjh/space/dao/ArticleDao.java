@@ -1,4 +1,4 @@
-package com.zjh.space.mapper;
+package com.zjh.space.dao;
 
 import com.zjh.space.entity.pojo.Article;
 import org.springframework.stereotype.Repository;
@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface ArticleMapper {
+public interface ArticleDao {
 
     //添加博客文章
 
-    int addArticle(Article article);
+    Article addArticle(Article article);
 }

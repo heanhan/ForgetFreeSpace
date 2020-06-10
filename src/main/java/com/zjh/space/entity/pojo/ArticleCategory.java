@@ -1,9 +1,11 @@
 package com.zjh.space.entity.pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,19 +16,42 @@ import java.util.Date;
  */
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
+@Table(name = "space_article_category")
 public class ArticleCategory  implements Serializable {
+    /**
+     * 主键
+     */
+    @Id
+    private Long id;
 
-    private Long id;//主键
+    /**
+     * 关联的分类id
+     */
+    @Column(name = "categoryId")
+    private Long categoryId;
 
-    private Long categoryId;//关联的分类id
+    /**
+     *关联的文章id;
+     */
+    @Column(name = "articleId")
+    private Long articleId;
 
-    private Long articleId;//关联的文章id;
+    /**
+     *创建时间
+     */
+    @Column(name = "createTime")
+    private Date createTime;
 
-    private Date createTime;//创建时间
+    /**
+     * 修改时间
+     */
+    @Column(name = "modifiedTime")
+    private Date modifiedTime;
 
-    private Date modifiedTime;//修改时间
-
-    private int isEffective;//是否有效  默认1 有效 0 为无效
+    /**
+     * 是否有效  默认1 有效 0 为无效
+     */
+    @Column(name = "isEffective")
+    private int isEffective;
 }

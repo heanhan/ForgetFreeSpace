@@ -1,6 +1,8 @@
 #服务信息
 server:
   port: 9100
+  error:
+    path: /error/404.html
 spring:
   application:
     name: forgetFreeSpace
@@ -9,9 +11,9 @@ spring:
   #配置mysql的连接信息
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blogs?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/forgetfreespace?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
     username: root
-    password: 123456
+    password: Root123456
     #配置druid连接池
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -47,11 +49,14 @@ spring:
     static-path-pattern: /**
   resources:
     static-locations: classpath:/static/
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL55Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
 
 #mybatis的配置
-mybatis:
-  mapper-locations: classpath:mapper/*Mapper.xml
-  type-aliases-package: com.zjh.space.entity
 
 #配置日志控制
 logging:
@@ -64,8 +69,8 @@ swagger:
   base-path: /**
   contact:
     email: dyc87112@qq.com
-    name: didi
-    url: http://blog.didispace.com
+    name: zhaojh
+    url: http://blog.zhaojh.com
   description: Starter for swagger 2.x
   license: Apache License, Version 2.0
   licenseUrl: https://www.apache.org/licenses/LICENSE-2.0.html

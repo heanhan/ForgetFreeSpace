@@ -18,18 +18,39 @@ import java.util.Date;
 @NoArgsConstructor
 public class Comment implements Serializable {
 
-    private Long id;//主键
+    /**
+     * 主键
+     */
+    private Long id;
 
-    private String content;//留言评论内容
+    /**
+     * 留言评论内容
+     */
+    private String content;
 
-    private Date createTime;//创建时间
+    /**
+     * 创建时间
+     */
+    private Date createTime;
 
-    private String email;//邮箱
+    /**
+     * 邮箱
+     */
+    private String email;
 
-    private String name;//用户自定义的名称
+    /**
+     * 用户自定义的名称
+     */
+    private String name;
 
-    private String ip;//留言/评论的者的ip
+    /**
+     * 留言/评论的者的ip
+     */
+    private String ip;
 
-    private int isEffective;//是否有效，默认1有效，0为无效
+    /**
+     * 是否有效，默认1有效，0为无效
+     */
+    private int isEffective;
 
 }

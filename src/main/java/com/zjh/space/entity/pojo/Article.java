@@ -1,9 +1,11 @@
 package com.zjh.space.entity.pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,22 +16,50 @@ import java.util.Date;
  */
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
+@Table(name = "space_article")
 public class Article implements Serializable {
 
-    private Long id;//主键
+    /**
+     * 主键
+     */
+    @Id
+    private Long id;
 
-    private String title;//文章标题
+    /**
+     *文章标题
+     */
+    @Column(name = "title")
+    private String title;
 
-    private String  summary;//文章简介概要，默认500个汉字
+    /**
+     *文章简介概要，默认500个汉字
+     */
+    @Column(name = "summary")
+    private String  summary;
 
-    private String isTop;//文章是否置顶，0为否，1是
+    /**
+     *文章是否置顶，0为否，1是
+     */
+    @Column(name = "isTop")
+    private String isTop;
 
-    private Long traffic;//访问量
+    /**
+     *访问量
+     */
+    @Column(name = "traffic")
+    private Long traffic;
 
-    private Date createTime;//创建时间
+    /**
+     *创建时间
+     */
+    @Column(name = "createTime")
+    private Date createTime;
 
-    private Date modifiedTime;//修改时间
+    /**
+     *修改时间
+     */
+    @Column(name = "modifiedTime")
+    private Date modifiedTime;
 
 }
