@@ -3,6 +3,7 @@ package com.zjh.space.entity.pojo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,6 +21,9 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "space_blog_logs")
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
 public class BlogLogs  implements Serializable {
 
     /**
@@ -27,35 +31,79 @@ public class BlogLogs  implements Serializable {
      */
     @Id
     private Long id;
-
     /**
-     * 操作的ip
+     * 请求ip
      */
-    @Column(name = "ip")
-    private String ip;
-
+    @Column(name = "request_ip")
+    private String requestIp;
     /**
-     *创建时间
+     * 系统模块，属于哪一个模块的请求日志
      */
-    @Column(name = "create_time")
-    private Date createTime;
-
+    @Column(name = "system_model")
+    private String systemModel;
     /**
-     *操作的内容
+     * 请求的地址
      */
-    @Column(name = "operator_content")
-    private String operatorContent;
-
+    @Column(name = "request_url")
+    private String requestUrl;
     /**
-     *操作访问的地址
+     * 请求方式：get、post等
      */
-    @Column(name = "operator_url")
-    private String operatorUrl;
-
+    @Column(name = "request_type")
+    private String requestType;
     /**
-     *操作的浏览器
+     * 请求执行的类路径
      */
-    @Column(name = "operator_scan")
-    private String operatorScan;
-
+    @Column(name = "class_path")
+    private String classPath;
+    /**
+     * 请求方法名
+     */
+    @Column(name = "method_name")
+    private String methodName;
+    /**
+     * 请求参数json
+     */
+    @Column(name = "request_params")
+    private String requestParams;
+    /**
+     * 请求接口唯一的session标识
+     */
+    @Column(name = "session_id")
+    private String sessionId;
+    /**
+     * 请求时间
+     */
+    @Column(name = "request_date")
+    private Date requestDate;
+    /**
+     * 返回时间
+     */
+    @Column(name = "return_date")
+    private Date returnDate;
+    /**
+     * 响应时间，即消耗多少毫秒
+     */
+    @Column(name = "request_time")
+    private Long responseTime;
+    /**
+     * 返回的数据json
+     */
+    @Column(name = "response_params")
+    private String responseParams;
+    /**
+     * 请求状态：0-成功，-1-异常
+     */
+    @Column(name = "status")
+    private Integer status;
+    /**
+     * 异常信息
+     */
+    @Column(name = "error_msg")
+    private String errorMsg;
+    /**
+     * 异常发生的时间
+     */
+    @Column(name = "error_date")
+    private Date errorDate;
 }
